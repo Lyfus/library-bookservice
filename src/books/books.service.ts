@@ -85,6 +85,7 @@ export class BooksService {
 
     @Process('fromUserToHome')
     async keepBookAtHome(job: Job<any>) {
+        // console.log("fromUserToHome", job);
         let toKeepBook = await this.findOne(job.data.bookId);
         toKeepBook = toKeepBook.dataValues;
         toKeepBook.state = "atHome",
@@ -100,6 +101,7 @@ export class BooksService {
 
     @Process('fromHomeToLibrary')
     async fromHomeToLibrary(job: Job<any>) {
+        // console.log("fromHomeToLibrary", job);
         if(job.data.state == 'damaged') {
             console.log("book is damaged");
             let savedBook = JSON.parse(JSON.stringify(job.data.book))
@@ -129,7 +131,7 @@ export class BooksService {
 
     @Process('fromReparationToLibrary')
     async fromReparationToLibrary(job: Job<any>) {
-        console.log("recieved book from fixservice")
+        // console.log("recieved book from fixservice")
         let bookToSetOnLibrary = job.data.book;
 
         bookToSetOnLibrary.state = "available",

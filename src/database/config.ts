@@ -1,7 +1,7 @@
 module.exports = {
     development: {
        dialect: 'mysql',
-       host: 'localhost',
+       host: 'mysql',
        port: 3306,
        username: 'root',
        password: '',
@@ -9,7 +9,7 @@ module.exports = {
     },
     test: {
         dialect: 'mysql',
-        host: 'localhost',
+        host: 'mysql',
         port: 3306,
         username: 'root',
         password: '',
@@ -17,7 +17,7 @@ module.exports = {
     },
     production: {
         dialect: 'mysql',
-        host: 'localhost',
+        host: 'mysql',
         port: 3306,
         username: 'root',
         password: '',

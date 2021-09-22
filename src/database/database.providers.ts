@@ -9,7 +9,7 @@ export const databaseProviders = [
         useFactory: async () => {
             const sequelize = new Sequelize({
                 dialect: 'mysql',
-                host: 'localhost',
+                host: 'mysql',
                 port: 3306,
                 username: 'root',
                 password: '',
